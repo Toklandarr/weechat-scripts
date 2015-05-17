@@ -62,7 +62,9 @@ weechat::register($SCRIPT{"name"}, $SCRIPT{"author"}, $SCRIPT{"version"}, $SCRIP
 init_config();
 
 # Setup hooks
-weechat::hook_print("", "notify_message,notify_private,notify_highlight", "", 1, "print_cb", "");
+weechat::hook_print("", "notify_message", "", 1, "print_cb", "");
+weechat::hook_print("", "notify_private", "", 1, "print_cb", "");
+weechat::hook_print("", "notify_highlight", "", 1, "print_cb", "");
 weechat::hook_command($SCRIPT{"name"}, "send custom push notification",
 	"<text>",
 	"text: notification text to send",
